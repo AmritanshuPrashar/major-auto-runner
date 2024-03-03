@@ -52,14 +52,14 @@ def perform_tasks():
     
     # Send data to the endpoint
     send_data_to_endpoint(temperature, humidity)
-    
-    print("Code execution complete.")
-
+def run_code():
+    print("Running the code now...")
 # Schedule tasks to run twice a day
-schedule.every().day.at("08:00").do(perform_tasks)
-schedule.every().day.at("20:00").do(perform_tasks)
+    schedule.every().day.at("08:00").do(perform_tasks)
+    schedule.every().day.at("20:00").do(perform_tasks)
 
-# Run the scheduled tasks indefinitely
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+    # Run the scheduled tasks indefinitely
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+run_code()
