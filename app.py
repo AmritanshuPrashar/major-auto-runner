@@ -41,6 +41,8 @@ def send_data_to_endpoint(temperature, humidity):
 
 # Function to perform the tasks twice a day
 def perform_tasks():
+    print("Running the code now...")
+    
     # Get weather data
     weather_data = get_weather_data()
     
@@ -50,6 +52,8 @@ def perform_tasks():
     
     # Send data to the endpoint
     send_data_to_endpoint(temperature, humidity)
+    
+    print("Code execution complete.")
 
 # Schedule tasks to run twice a day
 schedule.every().day.at("08:00").do(perform_tasks)
